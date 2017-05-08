@@ -11,4 +11,5 @@ An application that builds the *optimal* way between the two stations that you s
 - Calculating time of way
 
 The optimal way is constructed using the Dijkstra algorithm.
+
 The application is written in C# using WPF.
