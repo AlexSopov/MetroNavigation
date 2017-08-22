@@ -9,10 +9,11 @@
         xmlns:zoomPanel="clr-namespace:ZoomBoxLibrary;assembly=TWWPFUtilityLib"
         mc:Ignorable="d"
         Title="Metro navigation" Height="700" Width="1000"
+        MinWidth="700" MinHeight="500"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="275" MinWidth="200"  MaxWidth="400"/>
+            <ColumnDefinition Width="0.4*" MinWidth="225"  MaxWidth="300"/>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
@@ -63,7 +64,7 @@
                 </Grid.Resources>
                 
                 <TextBlock Grid.Row="0" Grid.ColumnSpan="3" Text="Kyiv metro navigaton" TextAlignment="Center"
-                           FontSize="22" FontWeight="Bold" Margin="0 5 0 5" />
+                           FontSize="20" FontWeight="Bold" Margin="10 5 10 5" />
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="From:" />
                 <ComboBox Grid.Row="1" Grid.Column="1" x:Name="cbFrom" SelectionChanged="ComboBoxStation_SelectionChanged"/>
 
@@ -93,9 +94,8 @@
 
         <!--Map placement-->
         <GridSplitter Grid.Column="1" Width="3" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
-        <zoomPanel:ZoomBoxPanel Grid.Column="2" ZoomMode="FitVisible" x:Name="zoomBox" Grid.Row="2" MinZoom="100" MaxZoom="200" MouseMode="Pan" WheelMode="Zoom" Background="White">
-            <Canvas Width="750" Height="750" x:Name="MetroMap">
-            </Canvas>
+        <zoomPanel:ZoomBoxPanel Grid.Column="2" ZoomMode="FitVisible" x:Name="zoomBox" Grid.Row="2" MinZoom="75" MaxZoom="200" MouseMode="Pan" WheelMode="Zoom" Background="White">
+            <Canvas Width="750" Height="750" x:Name="MetroMap" />
         </zoomPanel:ZoomBoxPanel>
     </Grid>
 </Window>

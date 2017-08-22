@@ -9,6 +9,7 @@ using System.Xml.Linq;
 using System.Windows.Input;
 using MetroDemo.Graph;
 using System.Windows.Media.Animation;
+using System.Globalization;
 
 namespace MetroDemo
 {
@@ -97,7 +98,7 @@ namespace MetroDemo
                         currentMetroStationControl);
 
                     if (stationElement.Element("TimeToNext") != null)
-                        timeToPrevious = Convert.ToDouble(stationElement.Element("TimeToNext").Value.Replace('.', ','));
+                        timeToPrevious = Convert.ToDouble(stationElement.Element("TimeToNext").Value, new CultureInfo("en-US"));
 
                     metroLinePolyLineSegment.Points.Add(new Point(Convert.ToDouble(stationElement.Element("X").Value), Convert.ToDouble(stationElement.Element("Y").Value)));
 
